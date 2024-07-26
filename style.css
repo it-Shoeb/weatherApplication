@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css2?family=Arsenal+SC:ital,wght@0,400;0,700;1,400;1,700&family=Bona+Nova+SC:ital,wght@0,400;0,700;1,400&family=Cinzel:wght@400..900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.wrapper{
+    font-family:"Arsenal SC";
+    max-width:1920px;
+    background-color: aliceblue;
+    display: grid;
+    grid-template-columns: 80% 1fr;
+    margin-inline: auto;
+    height: 100vh;
+}
+
+.lhs{
+    background-color: white;
+    padding:2rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.current-weatherContainer, .input-container{
+    width: 100%;
+    text-align: center;
+}
+
+.city-name{
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.input-container input{
+    background-color: aliceblue;
+    width: 100%;
+    padding: .4rem 1rem;
+    outline: none;
+    border-radius: 15px;
+    border: none;
+}
+.input-container input::placeholder{
+    color: black;
+}
+
+.current-weatherContainer{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 100%;
+}
+
+.weather-image{
+    padding: .5rem;
+}
+
+.city-name{
+    padding: 3rem 2rem;
+    border: solid aliceblue;
+    border-radius: 15px;
+}
+
+.weather-image{
+    margin-block: 1rem 0;
+    width: 100%;
+}
+
+.weather-image img{
+    width: 30%;
+}
+
+.weather-details .tempreture{
+    font-size: 6rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.current-date{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .51rem;
+    flex-wrap: wrap;
+}
+
+hr{
+    margin-block: 1rem;
+}
+
+.flex{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.city-name, .weather-details{
+    width: 40%;
+}
+
+.rhs{
+    padding: 1rem;
+    text-align: center;
+}
+
+.heading{
+    font-size: 2rem;
+}
+
+.fehranite{
+    font-size: 5rem;
+    font-weight: bold;
+}
+
+.inner-details{
+    margin-inline: auto;
+    padding: 0 2rem;
+}
+
+.card{
+    width: 100%;
+    flex-wrap: wrap;
+    display: flex;
+    align-items: center;
+    margin: 1.5rem .5rem;
+    justify-content: space-between;
+}
+
+.fehranite-container img{
+    width: 150px;
+}
+
+.card img{
+    width: 40px;
+}
+
+@media (max-width:480px){
+    .wrapper{
+        grid-template-columns: 1fr;
+        height: auto;
+    }
+
+    .city-name, .weather-details{
+        width: 100%;
+    }
+
+    .weather-image img{
+        width: 100%;
+    }
+    
+    .weather-details .tempreture{
+        font-size: 5rem;
+    }
+
+    .lhs{
+        height: auto;
+    }
+}
