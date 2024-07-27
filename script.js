@@ -147,6 +147,7 @@ async function getAPI(place) {
                 cityName.textContent = "city not found"
                 tempreture.textContent = "00 °C"
                 description.textContent = "......."
+                fehranite_description.textContent = "......."
                 setCloud("city not found")
             } else {
                 console.log(data);
