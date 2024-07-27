@@ -89,7 +89,12 @@ function getDay() {
 
 function setCloud(data) {
     console.log(data);
-    switch (data) {
+    fehranite.textContent = "00 °F";
+        feels_like.textContent = "000";
+        Wind.textContent = "000 km/h";
+        humidity.textContent = "000 %";
+        pressure.textContent = "000";
+        switch (data) {
         case "Mist":
             weatherImage.src = "./assets/mist.png"
             break;
@@ -122,8 +127,8 @@ place.addEventListener('keypress', (e) => {
 })
 
 search.addEventListener('click', () => {
-        getplace = place.value
-        getAPI(getplace)
+    getplace = place.value
+    getAPI(getplace)
 })
 
 let feels_like = document.querySelector('.feels_like')
@@ -140,7 +145,7 @@ async function getAPI(place) {
             console.log(data.message);
             if (data.message == "city not found") {
                 cityName.textContent = "city not found"
-                tempreture.textContent = "00"
+                tempreture.textContent = "00 °C"
                 description.textContent = "......."
                 setCloud("city not found")
             } else {
@@ -148,19 +153,19 @@ async function getAPI(place) {
                 cityName.textContent = data.name + ", " + data.sys.country
                 description.textContent = data.weather[0].description
                 tempreture.textContent = parseInt(data.main.temp - 273.15) + '°'
-                
+
                 setCloud(data.weather[0].main)
-                
+
                 feels_like.textContent = data.main.feels_like;
                 Wind.textContent = data.wind.speed + " km/h";
                 humidity.textContent = data.main.humidity + ' %';
                 pressure.textContent = data.main.pressure;
                 fehranite_description.textContent = data.weather[0].description
                 tempreture.textContent = parseInt(data.main.temp - 273.15) + ' °C'
-                fehranite.textContent = parseInt((data.main.temp - 273.15)* (9/5) + 32) + " °F";
+                fehranite.textContent = parseInt((data.main.temp - 273.15) * (9 / 5) + 32) + " °F";
             }
             console.log(data.main.temp - 273.15);
-            console.log(data.main.temp * (9/5) + 32);
+            console.log(data.main.temp * (9 / 5) + 32);
             // change to fehranite
         })
 
