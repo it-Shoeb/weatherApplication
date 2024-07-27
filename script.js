@@ -10,6 +10,7 @@ let currentMonth = document.querySelector('.month')
 let currentDate = document.querySelector('.date')
 let description = document.querySelector('.description')
 let getplace = "";
+let search = document.querySelector('.search')
 
 getDay()
 getMonth()
@@ -120,6 +121,11 @@ place.addEventListener('keypress', (e) => {
     }
 })
 
+search.addEventListener('click', () => {
+        getplace = place.value
+        getAPI(getplace)
+})
+
 let feels_like = document.querySelector('.feels_like')
 let Wind = document.querySelector('.Wind')
 let humidity = document.querySelector('.humidity')
@@ -150,8 +156,8 @@ async function getAPI(place) {
                 humidity.textContent = data.main.humidity + ' %';
                 pressure.textContent = data.main.pressure;
                 fehranite_description.textContent = data.weather[0].description
-                tempreture.textContent = parseInt(data.main.temp - 273.15) + '°'
-                fehranite.textContent = parseInt((data.main.temp - 273.15)* (9/5) + 32);
+                tempreture.textContent = parseInt(data.main.temp - 273.15) + ' °C'
+                fehranite.textContent = parseInt((data.main.temp - 273.15)* (9/5) + 32) + " °F";
             }
             console.log(data.main.temp - 273.15);
             console.log(data.main.temp * (9/5) + 32);
